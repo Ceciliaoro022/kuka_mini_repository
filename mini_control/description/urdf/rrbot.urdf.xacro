@@ -11,11 +11,6 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:rrbot>
   
-  <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="mini_gazebo_ros2_control">
-      <parameters>$(find kuka_mini)/config/kuka_mini.yaml</parameters>
-    </plugin>
-  </gazebo>
 
 
   <ros2_control name="GazeboSystem" type="system">
