@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot name="combined_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!--If I erase this link, the combined file does not work -->
+    <link name="world"/>
+
+    <!-- <xacro:property name="prefix" value="iiwa_"/> -->
+
+    <!-- Include the KUKA -->   
+    <xacro:include filename="$(find kuka_mini)/urdf/iiwa.urdf.xacro"/>
+    <!-- <xacro:iiwa  -->
+
+    <!-- Include the mini -->
+    <xacro:include filename="$(find mini_control)/description/urdf/rrbot.urdf.xacro"/>
+
+    <!-- <xacro:iiwa parent="world" prefix="iiwa_">
+    
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+
+    </xacro:iiwa> -->
+
+</robot>

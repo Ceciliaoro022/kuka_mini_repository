@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="rrbot" params="parent prefix *origin">
+
+  
+  <joint name="${prefix}base_joint" type="fixed">
+    <xacro:insert_block name="origin" />
+    <parent link="${parent}"/>
+    <child link="${prefix}base_link" />
+  </joint>
+
+  <!-- Base Link -->
+  <link name="${prefix}base_link">
+    <collision>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 2"/>
+      </geometry>
+    </collision> 
+
+    <visual>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 2"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <mass value="2"/>
+      <inertia
+        ixx="0.01" ixy="0.0" ixz="0.0"
+        iyy="0.01" iyz="0.0"
+        izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="${prefix}joint1" type="revolute">
+    <parent link="${prefix}base_link"/>
+    <child link="${prefix}link1"/>
+    <origin xyz="0 0.1 1.95" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.8"/>
+    <limit effort="100" lower="-6" upper="6" velocity="1" />
+  </joint>
+
+  <!-- Middle Link -->
+  <link name="${prefix}link1">
+    <collision>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 1"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="0.01" ixy="0.0" ixz="0.0"
+        iyy="0.01" iyz="0.0"
+        izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="${prefix}joint2" type="revolute">
+    <parent link="${prefix}link1"/>
+    <child link="${prefix}link2"/>
+    <origin xyz="0 0.1 0.95" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.8"/>
+    <limit effort="100" lower="-6" upper="6" velocity="1" />
+  </joint>
+
+  <!-- Top Link -->
+  <link name="${prefix}link2">
+    <collision>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 1"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="0.01" ixy="0.0" ixz="0.0"
+        iyy="0.01" iyz="0.0"
+        izz="0.01"/>
+    </inertial>
+  </link>
+
+  </xacro:macro>
+
+</robot>
