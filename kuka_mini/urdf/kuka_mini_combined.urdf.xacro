@@ -7,7 +7,7 @@
     <!-- <xacro:property name="prefix" value="iiwa_"/> -->
 
     <!-- Include the KUKA -->   
-    <xacro:include filename="$(find kuka_mini)/urdf/iiwa.urdf.xacro"/>
+    <xacro:include filename="$(find iiwa_description)/urdf/iiwa.urdf.xacro"/>
     <!-- <xacro:iiwa  -->
 
     <!-- Include the mini -->
