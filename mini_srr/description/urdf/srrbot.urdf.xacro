@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rrbot">
+
+
+  <xacro:include filename="$(find mini_control)/description/urdf/rrbot_macro.urdf.xacro" />
+
+  <!--Here I changed "world" to iiwa_tool0, the last link from my KUKA-->
+  <!--link name="world"-->
+  <link name="world"/>
+
+  <xacro:rrbot parent="world" prefix="">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:rrbot>
+  
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    
+
+    <joint name="joint1">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+    <joint name="joint2">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+  </ros2_control>
+
+</robot>
