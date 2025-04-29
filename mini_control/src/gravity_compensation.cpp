@@ -34,6 +34,7 @@ void GravityCompensationNode::joint_state_callback(const sensor_msgs::msg::Joint
     q(i) = msg->position[i];
   }
   
+  
   Eigen::VectorXd v = Eigen::VectorXd::Zero(model_.nv);
   Eigen::VectorXd a = Eigen::VectorXd::Zero(model_.nv);
   

@@ -13,21 +13,21 @@
   <!-- Base Link -->
   <link name="${prefix}base_link">
     <collision>
-      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
       <geometry>
         <box size="0.025 0.025 0.5"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
       <geometry>
         <box size="0.025 0.025 0.5"/>
       </geometry>
     </visual>
 
     <inertial>
-      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
       <mass value="0.5"/>
       <inertia
         ixx="0.01" ixy="0.0" ixz="0.0"
@@ -39,7 +39,7 @@
   <joint name="${prefix}joint1" type="revolute">
     <parent link="${prefix}base_link"/>
     <child link="${prefix}link1"/>
-    <origin xyz="0 0.025 0.45" rpy="0 0 0"/>
+    <origin xyz="0 0.025 0.48" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.8"/>
     <limit effort="100" lower="-6" upper="6" velocity="1" />
@@ -48,21 +48,21 @@
   <!-- Middle Link -->
   <link name="${prefix}link1">
     <collision>
-      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <geometry>
         <box size="0.025 0.025 0.25"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <geometry>
         <box size="0.025 0.025 0.25"/>
       </geometry>
     </visual>
 
     <inertial>
-      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <mass value="0.25"/>
       <inertia
         ixx="0.01" ixy="0.0" ixz="0.0"
@@ -74,7 +74,7 @@
   <joint name="${prefix}joint2" type="revolute">
     <parent link="${prefix}link1"/>
     <child link="${prefix}link2"/>
-    <origin xyz="0 0.025 0.075" rpy="0 0 0"/>
+    <origin xyz="0 0.025 0.2" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.8"/>
     <limit effort="100" lower="-6" upper="6" velocity="1" />
@@ -83,28 +83,30 @@
   <!-- Top Link -->
   <link name="${prefix}link2">
     <collision>
-      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <geometry>
         <box size="0.025 0.025 0.25"/>
       </geometry>
     </collision>
 
     <visual>
-      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
       <geometry>
         <box size="0.025 0.025 0.25"/>
       </geometry>
     </visual>
 
     <inertial>
-      <origin xyz="0 0 0.2" rpy="0 0 0"/>
-      <mass value="0.25"/>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <mass value="1"/>
       <inertia
         ixx="0.01" ixy="0.0" ixz="0.0"
         iyy="0.01" iyz="0.0"
         izz="0.01"/>
     </inertial>
   </link>
+
+  
 
   </xacro:macro>
 

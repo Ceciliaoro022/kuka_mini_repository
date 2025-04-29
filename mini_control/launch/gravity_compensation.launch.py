@@ -5,7 +5,7 @@ from launch.actions import DeclareLaunchArgument
 
 def generate_launch_description():
     
-    default_urdf_path = '/home/amir/ros2_ws/src/mini_control/description/urdf/rrbot.urdf'
+    default_urdf_path = '/home/user/10April_kuka_mini/src/kuka_mini_repository/mini_control/description/urdf/rrbot_.urdf'
     
     urdf_path_arg = DeclareLaunchArgument(
         'urdf_path',

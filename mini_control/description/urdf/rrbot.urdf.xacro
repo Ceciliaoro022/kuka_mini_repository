@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rrbot">
 
 
-  <xacro:include filename="$(find mini_control)/description/urdf/rrbot_macro.urdf.xacro" />
+  <xacro:include filename="$(find mini_control)/description/urdf/rrbot_macro_2.urdf.xacro" />
 
   <!--Here I changed "world" to iiwa_tool0, the last link from my KUKA-->
   <!--link name="world"-->

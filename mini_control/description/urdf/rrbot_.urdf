@@ -2,11 +2,11 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rrbot2" >
 
-  <link name="world"/>
+  <link name="tool0"/>
 
   <joint name="base_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <parent link="world"/>
+    <parent link="tool0"/>
     <child link="base_link" />
   </joint>
 

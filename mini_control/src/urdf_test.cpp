@@ -8,8 +8,8 @@ int main(int argc, char ** argv)
 {
   using namespace pinocchio;
   
-  std::string urdf_filename = "/home/amir/ros2_ws/src/mini_control/description/urdf/rrbot.urdf";
-
+  std::string urdf_filename = "/home/user/10April_kuka_mini/src/kuka_mini_repository/mini_control/description/urdf/rrbot_.urdf";
+    
 
   // Load the urdf model
   Model model;
